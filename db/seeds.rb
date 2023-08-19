@@ -3,7 +3,7 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
+#   movies = Movie.crexate([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
 Movie.create!(title: "Wonder Woman 1984",
@@ -26,4 +26,7 @@ Movie.create!(title: "Ocean's Eight",
   poster_url: "https://image.tmdb.org/t/p/original/MvYpKlpFukTivnlBhizGbkAe3v.jpg",
   rating: 7.0)
 
-  # http://tmdb.lewagon.com/movie/top_rated?api_key=<your_api_key
+# require open-uri
+# require json
+
+# url = URI.fetch('http://tmdb.lewagon.com/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_release_type=2|3&release_date.gte={min_date}&release_date.lte={max_date}')

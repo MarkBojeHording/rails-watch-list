@@ -1,0 +1,8 @@
+<h1>See movies</h1>
+
+<%= simple_form_for @bookmark do |f| %>
+  <%= f.input :name %>
+  <%= f.association :movie %>
+  <%= f.association :list %>
+  <%= f.button :submit %>
+<% end %>

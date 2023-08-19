@@ -1,0 +1,25 @@
+<%= render "navbar", lists: @list %>
+
+<div class="cards">
+  <% @list.bookmarks.each do |bookmark| %>
+    <div class="card-trip">
+      <img src="<%= bookmark.movie.poster_url %>" />
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= bookmark.movie.title %></h2>
+          <p><%= bookmark.movie.overview %></p>
+          <p><%= bookmark.comments %></p>
+        </div>
+        <h2 class="card-trip-pricing">Rating: <%= bookmark.movie.rating %></h2>
+      </div>
+      <%= link_to "Delete", bookmark_path(bookmark), class: "btn btn-danger", data: { turbo_method: "delete" } %>
+    </div>
+  <% end %>
+</div>
+<br>
+<div>
+<%= link_to "Add Bookmark", new_list_bookmark_path(@list) %>
+</div>
+<div>
+<%= link_to "Home Page", lists_path %>
+</div>

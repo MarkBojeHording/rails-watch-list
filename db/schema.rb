@@ -15,7 +15,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_17_042540) do
   enable_extension "plpgsql"
 
   create_table "bookmarks", force: :cascade do |t|
-    t.string "comment"
+    t.string "comments"
     t.bigint "movie_id", null: false
     t.bigint "list_id", null: false
     t.datetime "created_at", null: false
